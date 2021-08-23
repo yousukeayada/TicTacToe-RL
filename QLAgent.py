@@ -50,6 +50,7 @@ class QLAgent(Agent):
         np.savez_compressed(path, q_table=self.q_table)
 
     def load_q_table(self, path):
+        logger.info("Load Q table ...")
         # self.q_table = np.load(path)
         self.q_table = np.load(path)["q_table"]
 
