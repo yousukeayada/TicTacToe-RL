@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 parser = argparse.ArgumentParser(description="RL parameter")
-parser.add_argument('--size', type=int, default=3)
+parser.add_argument('--size', type=int, choices=range(3,5), default=3)
 args = parser.parse_args()
 
 size  = args.size
@@ -49,13 +49,13 @@ while True:
         logger.info("Player's turn")
         while True:
             try:
-                logger.info("Input number 0~8")
+                logger.info(f"Input number 0~{env.num_squares-1}")
                 action = int(input())
             except Exception as e:
                 logger.info(e)
                 continue
             logger.debug(f"state: {state}, action: {action}")
-            if action < 0 or action >= 9:
+            if action < 0 or action >= env.num_squares:
                 logger.info("Invalid input")
                 continue
             if not env.check(action):

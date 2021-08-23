@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 parser = argparse.ArgumentParser(description="RL parameter")
 parser.add_argument('--alpha', type=float, default=0.1)
 parser.add_argument('--gamma', type=float, default=0.9)
-parser.add_argument('--size', type=int, default=3)
+parser.add_argument('--size', type=int, choices=range(3,5), default=3)
 args = parser.parse_args()
 
 alpha = args.alpha
