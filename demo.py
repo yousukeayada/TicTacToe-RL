@@ -25,7 +25,7 @@ actions    = [i for i in range(env.num_squares)]
 agent = QLAgent(num_states, actions)
 
 state = env.reset()
-agent.load_q_table(f"q_table_demo_{size}.npy")
+agent.load_q_table(f"q_table_demo_{size}.npz")
 
 env.board.show_stage()
 

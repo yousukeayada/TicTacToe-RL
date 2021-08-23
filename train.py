@@ -131,4 +131,4 @@ plt.ylabel("Winning percentage")
 plt.legend()
 plt.savefig("wp.png")
 
-agent1.save_q_table("q_table")
+agent1.save_q_table(f"q_table_{size}")
